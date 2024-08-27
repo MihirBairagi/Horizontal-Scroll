@@ -56,10 +56,26 @@ function App() {
         pin: true,
         scrub: 1,
         smoothScrub: 0.1,
-        
-        markers: true,
+        // markers: true,
       },
-    })
+    });
+
+    // document.querySelectorAll('.section').forEach(section => {
+    //   gsap.from(section, {
+    //     scrollTrigger: {
+    //       trigger: section,
+    //       start: "top 90%",
+    //       end: "top 30%",
+    //       scrub: 1,
+    //       smoothScrub: 0.1,
+    //       markers: true,
+    //     },
+    //     y: '10rem',
+    //     ease: "power2.inOut",
+    //     opacity: 1,
+    //   });
+    // });
+    
 
     return () => {
       pin.kill()
@@ -68,7 +84,7 @@ function App() {
   }, []);
   return (
    <>
-   <section className='section-1 section' >
+   <section className='section-1' >
       <div className="container">
         <div className="section-box-1 flex justify-between py-[8rem]">
           <div className="text-box w-[45%]">
@@ -113,12 +129,6 @@ function App() {
             </li>
             <li>
               <img src={team3} alt="" />
-            </li>
-            <li>
-              <img src={team4} alt="" />
-            </li>
-            <li>
-              <img src={team5} alt="" />
             </li>
           </ul>
         </div>
