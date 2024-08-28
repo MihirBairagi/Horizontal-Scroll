@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './App.css';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, Draggable  } from "gsap/all";
 import Lenis from '@studio-freight/lenis';
 import imageOne from './assets/img/image-1.png'
 import imageTwo from './assets/img/image-2.png'
@@ -10,6 +10,7 @@ import team2 from './assets/img/tean-2.png'
 import team3 from './assets/img/tean-3.png'
 import team4 from './assets/img/tean-4.png'
 import team5 from './assets/img/tean-5.png'
+import Section3 from './components/DragAndPlay';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(Draggable, ScrollTrigger);
 
   useEffect(() => {
     // Initialize Lenis for smooth scrolling
@@ -79,7 +80,7 @@ function App() {
       });
     });
 
-    
+
     const tl = gsap.timeline();   
     tl.fromTo('.up', {
       y: '10rem',
@@ -94,9 +95,27 @@ function App() {
         });
 
 
-    
+    const tl2 = gsap.timeline();   
 
-
+    tl2.fromTo('.up2', {
+      y: '10rem',
+      opacity: 0,
+    },{
+          y: '0rem',
+          ease: "power2.inOut",
+          duration: 1, 
+          opacity: 1,
+          stagger: 0.3,
+          scrub: 1,
+          scrollTrigger: {
+            trigger: '.section-4',
+            start: "top 60%",
+            end: "top -10%",
+            scrub: 1,
+            smoothScrub: 0.1,
+            // markers: true,
+          },
+        });
 
     return () => {
       pin.kill()
@@ -157,10 +176,31 @@ function App() {
         </div>
    </section>
 
-   <section className='section-3 section'>
+   <section className='section-4' >
       <div className="container">
-        <div className="section-box-3">
-          <h2 className='text-center' >This is the<br/> Second Section Wow!</h2>
+        <div className="section-box-1 flex justify-between py-[8rem]">
+          <div className="img-box flex justify-between w-[50%]">
+            <div className="img-box w-[48%] up2">
+              <img className='object-cover h-[100%]' src={imageOne} alt="" />
+            </div>
+            <div className="img-box w-[48%] up2">
+              <img className='object-cover h-[100%]' src={imageTwo} alt="" />
+            </div>
+          </div>
+          <div className="text-box w-[45%]">
+              <h1 className='text-[5rem] leading-[1.1] mb-[2rem] up2' >This is a Section with Images</h1>
+              <p className='up2' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quo possimus natus ipsum impedit sapiente aspernatur quos perspiciatis ipsa ab repellendus quidem magnam, enim in.</p>
+          </div>
+        </div>
+      </div>
+   </section>
+
+   <Section3/>
+
+   <section className='section-5 section' >
+      <div className="container">
+        <div className="section-box-5 flex justify-center items-center">
+          <h2>Footer</h2>
         </div>
       </div>
    </section>
