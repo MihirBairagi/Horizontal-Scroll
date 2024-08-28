@@ -59,7 +59,7 @@ const Section3 = () => {
           onComplete: () => {
             // Gravity effect for Y position
             gsap.to(this.target, {
-              y: parentRect.height - itemRect.height - 170,
+              y: parentRect.height - itemRect.height - 230,
               ease: "bounce.out",
               duration: 1,
             });
@@ -101,10 +101,10 @@ const Section3 = () => {
     <section className='section-3 section'>
       <div className="container">
         <h2>Drag and Play</h2>
-        <div className="section-3-box py-[8rem] relative h-[500px] w-[100%] border-red-700 border-2 overflow-hidden">
-          <div className="draggable-item bg-blue-400 w-[100px] h-[100px] rounded-lg absolute"></div>
-          <div className="draggable-item bg-red-400 w-[100px] h-[100px] rounded-lg absolute"></div>
-          <div className="draggable-item bg-green-400 w-[100px] h-[100px] rounded-lg absolute"></div>
+        <div className="section-3-box py-[8rem] relative h-[30rem] w-[100%] border-red-700 border-2 overflow-hidden">
+          <div className="draggable-item bg-blue-400 w-[2rem] h-[2rem] rounded-lg absolute"></div>
+          <div className="draggable-item bg-red-400 w-[2rem] h-[2rem] rounded-lg absolute"></div>
+          <div className="draggable-item bg-green-400 w-[2rem] h-[2rem] rounded-lg absolute"></div>
         </div>
       </div>
     </section>
