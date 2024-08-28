@@ -24,7 +24,7 @@ function App() {
     // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
       duration: 1.5,
-      easing: (t) => Math.min(1, 1.5 * t), // Adjust easing for responsiveness
+      // easing: (t) => Math.min(1, 1.5 * t), // Adjust easing for responsiveness
       smooth: true,
     });
 
