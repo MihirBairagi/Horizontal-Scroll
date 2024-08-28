@@ -60,42 +60,65 @@ function App() {
       },
     });
 
-    // document.querySelectorAll('.section').forEach(section => {
-    //   gsap.from(section, {
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       start: "top 90%",
-    //       end: "top 30%",
-    //       scrub: 1,
-    //       smoothScrub: 0.1,
-    //       markers: true,
-    //     },
-    //     y: '10rem',
-    //     ease: "power2.inOut",
-    //     opacity: 1,
-    //   });
-    // });
+    document.querySelectorAll('.section').forEach(section => {
+      gsap.fromTo(section, {
+        y: '10rem',
+        opacity: 0,
+      },{
+        y: '0rem',
+        ease: "power2.inOut",
+        opacity: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 90%",
+          end: "top 10%",
+          scrub: 1,
+          smoothScrub: 0.1,
+          // markers: true,
+        },
+      });
+    });
+
     
+    const tl = gsap.timeline();   
+    tl.fromTo('.up', {
+      y: '10rem',
+      opacity: 0,
+    },{
+          y: '0rem',
+          ease: "power2.inOut",
+          duration: 1, 
+          opacity: 1,
+          stagger: 0.3,
+          scrub: 1,
+        });
+
+
+    
+
+
 
     return () => {
       pin.kill()
     }
 
   }, []);
+
+
   return (
    <>
    <section className='section-1' >
       <div className="container">
         <div className="section-box-1 flex justify-between py-[8rem]">
           <div className="text-box w-[45%]">
-              <h1 className='text-[5rem] leading-[1.1] mb-[2rem]' >This is a Section with Images</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quo possimus natus ipsum impedit sapiente aspernatur quos perspiciatis ipsa ab repellendus quidem magnam, enim in.</p>
+              <h1 className='text-[5rem] leading-[1.1] mb-[2rem] up' >This is a Section with Images</h1>
+              <p className='up' >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quo possimus natus ipsum impedit sapiente aspernatur quos perspiciatis ipsa ab repellendus quidem magnam, enim in.</p>
           </div>
           <div className="img-box flex justify-between w-[50%]">
-            <div className="img-box w-[48%]">
+            <div className="img-box w-[48%] up">
               <img className='object-cover h-[100%]' src={imageOne} alt="" />
             </div>
-            <div className="img-box w-[48%]">
+            <div className="img-box w-[48%] up">
               <img className='object-cover h-[100%]' src={imageTwo} alt="" />
             </div>
           </div>
