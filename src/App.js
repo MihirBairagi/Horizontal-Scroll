@@ -198,7 +198,7 @@ function App() {
         </div>
       </div>
    </section>
-   {/* <AnimatedBox/> */}
+   <AnimatedBox/>
     <section className='section-7 section' >
       <div className="container">
         <div className="section-box-7">
@@ -206,7 +206,7 @@ function App() {
         </div>
       </div>
     </section>
-   {/* <LottieScroll animationData={animationData} /> */}
+   <LottieScroll animationData={animationData} />
    <section className='section-6 section' >
       <div className="container">
         <div className="section-box-6">
