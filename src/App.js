@@ -10,7 +10,11 @@ import team2 from './assets/img/tean-2.png'
 import team3 from './assets/img/tean-3.png'
 import team4 from './assets/img/tean-4.png'
 import team5 from './assets/img/tean-5.png'
-import Section3 from './components/DragAndPlay';
+import LottieScroll from "./components/LottieScroll";
+import animationData from "./assets/Growth Animation.json";
+import AnimatedBox from './components/AnimatedBox';
+
+
 
 
 function App() {
@@ -95,7 +99,7 @@ function App() {
         });
 
 
-    const tl2 = gsap.timeline();   
+    const tl2 = gsap.timeline();
 
     tl2.fromTo('.up2', {
       y: '10rem',
@@ -106,6 +110,7 @@ function App() {
           duration: 1, 
           opacity: 1,
           stagger: 0.3,
+          delay: 1,
           scrub: 1,
           scrollTrigger: {
             trigger: '.section-4',
@@ -175,7 +180,6 @@ function App() {
           </ul>
         </div>
    </section>
-
    <section className='section-4' >
       <div className="container">
         <div className="section-box-1 flex justify-between py-[8rem]">
@@ -194,10 +198,23 @@ function App() {
         </div>
       </div>
    </section>
-
-   <Section3/>
-
-   <section className='section-5 section' >
+   <AnimatedBox/>
+    <section className='section-7 section' >
+      <div className="container">
+        <div className="section-box-7">
+          <h2 className='text-center' >Motion Path Animation</h2>
+        </div>
+      </div>
+    </section>
+   <LottieScroll animationData={animationData} />
+   <section className='section-6 section' >
+      <div className="container">
+        <div className="section-box-6">
+          <h2 className='text-center' >Hello! |<br/> Lottie Animation</h2>
+        </div>
+      </div>
+   </section>
+   <section className='section-5' >
       <div className="container">
         <div className="section-box-5 flex justify-center items-center">
           <h2>Footer</h2>

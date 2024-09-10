@@ -11,6 +11,7 @@ html{
 }
 body{
   background-color: #000;
+  overflow-x: hidden;
 }
 
 section{
@@ -75,4 +76,12 @@ h2 {
 }
 .team-listing li:first-child {
   margin-left: 10rem;
+}
+.fix {
+  position: fixed;
+  top: 5%;
+}
+.animation-box .pin-spacer {
+  height: 15vh !important;
+  padding: 0 0 0vh !important;
 }
